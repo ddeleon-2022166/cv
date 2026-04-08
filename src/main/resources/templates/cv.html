@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Diego de León</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<!-- Fondo con gradiente animado -->
+<div class="bg-gradient"></div>
+<div class="bg-particles"></div>
+
+<div class="container">
+    <div class="main">
+
+        <!-- COLUMNA IZQUIERDA - Perfil y Contacto -->
+        <div class="left">
+
+            <!-- Tarjeta de Perfil -->
+            <div class="profile-card glass">
+                <div class="profile-image-wrapper">
+                    <img th:src="@{/images/img1.jpg}" alt="Foto de perfil" class="foto">
+                    <div class="profile-status"></div>
+                </div>
+
+                <h1 class="profile-name" th:text="${nombre}">Diego Alejandro de León García</h1>
+                <h2 class="profile-title" th:text="${titulo}">Programador</h2>
+
+                <div class="profile-divider"></div>
+            </div>
+
+            <!-- Sobre Mí -->
+            <div class="info-card glass">
+                <div class="card-header">
+                    <i class="fas fa-user-astronaut"></i>
+                    <h3>Sobre Mí</h3>
+                </div>
+                <p class="about-text" th:text="${descripcion}"></p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="info-card glass">
+                <div class="card-header">
+                    <i class="fas fa-address-card"></i>
+                    <h3>Contacto</h3>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value" th:text="${email}">ddeleon-2022166@kinal.edu.gt</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">Teléfono</span>
+                        <span class="contact-value" th:text="${telefono}">+502 8956 2309</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-label">Ubicación</span>
+                        <span class="contact-value">Guatemala</span>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="social-links">
+                    <a href="#" class="social-btn github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-btn twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA - Experiencia y Habilidades -->
+        <div class="right">
+
+            <!-- Experiencia -->
+            <div class="section-card glass">
+                <div class="card-header">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Experiencia</h3>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>KinalApp - API REST</h4>
+                            <span class="timeline-date">Proyecto Personal</span>
+                            <p>API REST desarrollada con Spring Boot, gestión de clientes, productos, usuarios, ventas y detalle de ventas. Incluye CRUD completo y autenticación con Spring Security.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">Spring Security</span>
+                                <span class="tag">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Sistema de Gestión</h4>
+                            <span class="timeline-date">Proyecto Académico</span>
+                            <p>Sistema completo de gestión con Thymeleaf y Spring MVC. Implementación de operaciones CRUD, validaciones y diseño responsive con Bootstrap.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Spring MVC</span>
+                                <span class="tag">Thymeleaf</span>
+                                <span class="tag">JPA/Hibernate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Habilidades Técnicas -->
+            <div class="section-card glass">
+                <div class="card-header">
+                    <i class="fas fa-cog"></i>
+                    <h3>Habilidades Técnicas</h3>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Java -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                                <span class="skill-name">
+                                    <i class="fab fa-java"></i>
+                                    Java
+                                </span>
+                            <span class="skill-percent">50%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 50%; background: linear-gradient(90deg, #f89820, #e76f00);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Spring Boot -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                                <span class="skill-name">
+                                    <i class="fas fa-leaf"></i>
+                                    Spring Boot
+                                </span>
+                            <span class="skill-percent">30%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 30%; background: linear-gradient(90deg, #6db33f, #5a9a2f);"></div>
+                        </div>
+                    </div>
+
+                    <!-- MySQL -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                                <span class="skill-name">
+                                    <i class="fas fa-database"></i>
+                                    MySQL
+                                </span>
+                            <span class="skill-percent">40%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 40%; background: linear-gradient(90deg, #00758f, #005f73);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                                <span class="skill-name">
+                                    <i class="fab fa-git-alt"></i>
+                                    Git
+                                </span>
+                            <span class="skill-percent">50%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 50%; background: linear-gradient(90deg, #f05032, #d04028);"></div>
+                        </div>
+                    </div>
+
+                    <!-- HTML/CSS -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                                <span class="skill-name">
+                                    <i class="fab fa-html5"></i>
+                                    HTML5/CSS3
+                                </span>
+                            <span class="skill-percent">30%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 30%; background: linear-gradient(90deg, #e44d26, #c13b1a);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Idiomas -->
+            <div class="section-card glass">
+                <div class="card-header">
+                    <i class="fas fa-language"></i>
+                    <h3>Idiomas</h3>
+                </div>
+
+                <div class="languages-container">
+                    <div class="language-item">
+                        <span class="language-name">Español</span>
+                        <span class="language-level native">Nativo</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
